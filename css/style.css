@@ -16,4 +16,16 @@
 
 .imagenproducto {
   height: 357px;
+}
+
+.icono {
+  height: 32px;
+}
+
+.card-animation {
+  transition: transform 0.5s;
+}
+
+.card-animation:hover {
+  transform: scale(1.1);
 }/*# sourceMappingURL=style.css.map */

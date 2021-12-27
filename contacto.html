@@ -40,21 +40,16 @@
                             data-bs-toggle="dropdown" aria-expanded="false">Productos</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li>
-                                <a class="dropdown-item" href="productos.html">Agendas y organizadores 2022</a>
+                                <a class="dropdown-item" href="productos.html#agendas">Agendas 2022</a>
                             </li>
                             <li>
-                                <hr class="dropdown-divider" />
+                                <a class="dropdown-item" href="productos.html#calendario">Calendarios y
+                                    organizadores</a>
                             </li>
+
                             <li>
-                                <a class="dropdown-item" href="productos.html">Libretas y cuadernos</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="productos.html">Cuaderno emprendedor</a>
-                            </li>
-                            <li><a class="dropdown-item" href="productos.html">Recetario</a></li>
-                            <li><a class="dropdown-item" href="productos.html">Stickers</a></li>
-                            <li>
-                                <a class="dropdown-item" href="productos.html">Fibras, resaltadores y más</a>
+                                <a class="dropdown-item" href="productos.html#fibrasresaltadores">Fibras, resaltadores y
+                                    más</a>
                             </li>
                             <li>
                                 <hr class="dropdown-divider" />
@@ -69,7 +64,7 @@
                 <form class="d-flex">
                     <button class="btn btn-outline-dark" type="submit">
                         <i class="bi-cart-fill me-1"></i>
-                        Cart
+                        Carrito
                         <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                     </button>
                 </form>
@@ -89,11 +84,17 @@
             </div>
 
             <div class="row mt-5 text-center">
-                <div class="col-sm">Envíos a todo el país</div>
+                <div class="col-sm">Envíos a todo el país
+                    <img class="icono" src="/imagenes/icons/truck.png" alt="truck antonieta" />
+
+                </div>
                 <div class="col-sm">
                     Retiros en nuestro showroom de lunes a sábados
+                    <img class="icono" src="/imagenes/icons/185038_home_house_icon.png" alt="pickup antonieta" />
                 </div>
-                <div class="col-sm">Mercado pago</div>
+                <div class="col-sm">Mercado pago
+                    <img class="icono" src="/imagenes/icons/mercadopago.png" alt="truck antonieta" />
+                </div>
             </div>
         </div>
     </header>
@@ -142,8 +143,25 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm">Antonieta Handmade</div>
-                <div class="col-sm">Seguinos en nuestras redes</div>
-                <div class="col-sm">Suscribite y recibí novedades</div>
+                <div class="col-sm">Seguinos en nuestras redes
+                    <div class="d-flex flex-row">
+                        <div class="p-2"> <a href="https://www.facebook.com">
+                                <img class="icono" src="/imagenes/icons/facebook.png" alt="facebook antonieta" />
+                            </a></div>
+                        <div class="p-2"> <a href="https://www.instagram.com"><img class="icono"
+                                    src="/imagenes/icons/instagram.png" /></a> </div>
+                        <div class="p-2"> <a href="https://www.pinterest.com"><img class="icono"
+                                    src="/imagenes/icons/pinterest.png" /></a> </div>
+                    </div>
+                </div>
+                <div class="col-sm">Suscribite y recibí novedades
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputNombre1"></label>
+                            <input type="text" class="form-control" id="exampleInputNombre1" aria-describedby="nameHelp"
+                                placeholder="Dejanos tu mail ;)">
+                    </form>
+                </div>
             </div>
         </div>
     </footer>
