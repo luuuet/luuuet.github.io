@@ -160,7 +160,10 @@ while (!termino) {
   }
 }*/
 
-const carrito = JSON.parse(localStorage.getItem("carrito"));
+let carrito = [];
+if (localStorage.getItem("carrito") !== null) {
+  carrito = JSON.parse(localStorage.getItem("carrito"));
+}
 const carritohtml = document.getElementById("carrito");
 let template = "";
 carrito.forEach((item) => {
