@@ -38,6 +38,12 @@ for (let i = 1; i <= numero1; i++);
   alert("hola");
 }*/
 
+/*let boton = document.getElementById("btnCarrito");
+
+const respuestaClick = () => alert("Respuesta evento");
+
+boton.onclick = respuestaClick;
+
 alert("Bienvenido a Antonieta Handmade!");
 let termino = false;
 function solicitarNumero() {
@@ -152,4 +158,98 @@ while (!termino) {
   } else {
     alert("Ingrese la opción correcta (cuaderno, cuadernola o colores)");
   }
+}*/
+
+const carrito = JSON.parse(localStorage.getItem("carrito"));
+const carritohtml = document.getElementById("carrito");
+let template = "";
+carrito.forEach((item) => {
+  template += `
+    <li class="list">
+        <b>nombre: </b> <span class="text-danger">${item}</span>
+    </li>
+    `;
+});
+carritohtml.innerHTML = template;
+
+function mostrarCarrito(mensajeToastify) {
+  console.log(carrito);
+  const carritohtml = document.getElementById("carrito");
+  let template = "";
+  carrito.forEach((item) => {
+    template += `
+    <li class="list">
+        <b>nombre: </b> <span class="text-danger">${item}</span>
+    </li>
+    `;
+  });
+  carritohtml.innerHTML = template;
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  Toastify({
+    text: mensajeToastify,
+    duration: 3000,
+    newWindow: true,
+    close: true,
+    gravity: "top", // `top` or `bottom`
+    position: "right", // `left`, `center` or `right`
+    stopOnFocus: true, // Prevents dismissing of toast on hover
+    style: {
+      background: "linear-gradient(to right, #00b09b, #96c93d)",
+    },
+    onClick: function () {}, // Callback after click
+  }).showToast();
 }
+
+const botonAgenda = document.getElementById("btn-agenda");
+botonAgenda.addEventListener("click", () => {
+  console.log("diste click");
+  carrito.push("Agenda");
+  mostrarCarrito("Qué crack! Agregaste una agenda😉");
+});
+const botonOrganizadores = document.getElementById("btn-organizador");
+botonOrganizadores.addEventListener("click", () => {
+  console.log("diste click");
+  carrito.push("Organizador");
+  mostrarCarrito("Qué crack! Agregaste un organizador");
+});
+const botonCalendario = document.getElementById("btn-calendario");
+botonCalendario.addEventListener("click", () => {
+  console.log("diste click");
+  carrito.push("Calendario");
+  mostrarCarrito("Qué crack! Agregaste un calendario😉");
+});
+const botonAgendadocente = document.getElementById("btn-agendadocente");
+botonAgendadocente.addEventListener("click", () => {
+  console.log("diste click");
+  carrito.push("Agenda docente");
+  mostrarCarrito("Qué crack! Agregaste una agenda docente🤓");
+});
+const botonAgendaestudiantil = document.getElementById("btn-agendaestudiantil");
+botonAgendaestudiantil.addEventListener("click", () => {
+  console.log("diste click");
+  carrito.push("Agenda estudiantil");
+  mostrarCarrito("Qué crack! Agregaste una agenda estudiantil");
+});
+const botonEnjoy = document.getElementById("btn-enjoy");
+botonEnjoy.addEventListener("click", () => {
+  console.log("diste click");
+  carrito.push("Cuaderno Enjoy the little things");
+  mostrarCarrito("Qué crack! Agregaste un cuaderno");
+});
+const botonResaltadores = document.getElementById("btn-resaltadores");
+botonResaltadores.addEventListener("click", () => {
+  console.log("diste click");
+  carrito.push("Pack resaltadores");
+  mostrarCarrito("Qué crack! Agregaste resaltadores");
+});
+const botonColores = document.getElementById("btn-colores");
+botonColores.addEventListener("click", () => {
+  console.log("diste click");
+  carrito.push("Colores pastel");
+  mostrarCarrito("Qué crack! Agregaste colores!");
+});
+
+//carrito vacio
+//click en boton ejecuta funcion e imprime en consola algo (eventlis)
+//en la funcion anterior en vez de imprimir agrega elemento a carrito
+//alterar el DOM mostrando todos los elementos del carrito
