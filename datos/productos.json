@@ -1,0 +1,50 @@
+[
+    {
+      "nombre": "Agendas 2022",
+      "precio": 1200,
+      "imagen": "imagenes/foto9.jpg",
+      "identificador": "btn-agenda"
+    },
+    {
+      "nombre": "Organizadores 2022",
+      "precio": 900,
+      "imagen": "imagenes/organizador.jpg",
+      "identificador": "btn-organizador"
+    },
+    {
+      "nombre": "Calendario 2022",
+      "precio": 900,
+      "imagen": "imagenes/calendario ok.jpg",
+      "identificador": "btn-calendario"
+    },
+    {
+      "nombre": "Agenda docente",
+      "precio": 950,
+      "imagen": "imagenes/foto2.jpg",
+      "identificador": "btn-agendadocente"
+    },
+    {
+      "nombre": "Agenda estudiantil",
+      "precio": 650,
+      "imagen": "imagenes/foto1.jpg",
+      "identificador": "btn-agendaestudiantil"
+    },
+    {
+      "nombre": "Cuaderno Enjoy the little things",
+      "precio": 470,
+      "imagen": "imagenes/cuaderno.jpg",
+      "identificador": "btn-enjoy"
+    },
+    {
+      "nombre": "Pack resaltadores",
+      "precio": 350,
+      "imagen": "imagenes/resaltadores.jpg",
+      "identificador": "btn-resaltadores"
+    },
+    {
+      "nombre": "Colores pastel",
+      "precio": 190,
+      "imagen": "imagenes/colores.jpg",
+      "identificador": "btn-colores"
+    }
+  ]
