@@ -2,30 +2,32 @@ let carrito = [];
 if (localStorage.getItem("carrito") !== null) {
   carrito = JSON.parse(localStorage.getItem("carrito"));
 }
-const carritohtml = document.getElementById("carrito");
-let template = "";
-carrito.forEach((item) => {
-  template += `
-    <li class="list">
-        <b>nombre: </b> <span class="text-danger">${item}</span>
-    </li>
-    `;
-});
-carritohtml.innerHTML = template;
 
 function mostrarCarrito(mensajeToastify) {
   console.log(carrito);
-  const carritohtml = document.getElementById("carrito");
+  let total = 0;
+
+  const carritohtml = document.getElementById("tablaCarrito");
   let template = "";
   carrito.forEach((item) => {
     template += `
-    <li class="list">
-        <b>nombre: </b> <span class="text-danger">${item}</span>
-    </li>
+    <tr> 
+    <th scope="row">${item.nombre}</th>
+                            <td>1</td>
+                            <td>${item.precio}</td>
+    </tr>
     `;
+    total = total + item.precio;
   });
   carritohtml.innerHTML = template;
+  console.log(`El total es $${total}`);
+  const totalhtml = document.getElementById("totalCarrito");
+  totalhtml.innerHTML = `El total es $${total}`;
+
   localStorage.setItem("carrito", JSON.stringify(carrito));
+}
+
+function mostrarToastify(mensajeToastify) {
   Toastify({
     text: mensajeToastify,
     duration: 3000,
@@ -40,6 +42,8 @@ function mostrarCarrito(mensajeToastify) {
     onClick: function () {}, // Callback after click
   }).showToast();
 }
+
+mostrarCarrito();
 
 fetch("/datos/productos.json")
   .then((respuesta) => respuesta.json())
@@ -82,8 +86,9 @@ fetch("/datos/productos.json")
       const boton = document.getElementById(producto.identificador);
       boton.addEventListener("click", () => {
         console.log("diste click");
-        carrito.push(producto.nombre);
-        mostrarCarrito(`Qué crack! Agregaste ${producto.nombre}`);
+        carrito.push(producto);
+        mostrarCarrito();
+        mostrarToastify(`Qué crack! Agregaste ${producto.nombre}`);
       });
     });
   });
