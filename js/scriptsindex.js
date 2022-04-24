@@ -2,31 +2,10 @@ let carrito = [];
 if (localStorage.getItem("carrito") !== null) {
   carrito = JSON.parse(localStorage.getItem("carrito"));
 }
-
-function mostrarCarrito(mensajeToastify) {
-  console.log(carrito);
-  let total = 0;
-
-  const carritohtml = document.getElementById("tablaCarrito");
-  let template = "";
-  carrito.forEach((item) => {
-    template += `
-    <tr> 
-    <th scope="row">${item.nombre}</th>
-                            <td>1</td>
-                            <td>${item.precio}</td>
-    </tr>
-    `;
-    total = total + item.precio;
-  });
-  carritohtml.innerHTML = template;
-  console.log(`El total es $${total}`);
-  const totalhtml = document.getElementById("totalCarrito");
-  totalhtml.innerHTML = `El total es $${total}`;
-
-  localStorage.setItem("carrito", JSON.stringify(carrito));
+function mostrarNumerocarrito() {
+  const carritoNumerohtml = document.getElementById("carritoNumero");
+  carritoNumerohtml.innerHTML = carrito.length;
 }
-
 function mostrarToastify(mensajeToastify) {
   Toastify({
     text: mensajeToastify,
@@ -43,7 +22,7 @@ function mostrarToastify(mensajeToastify) {
   }).showToast();
 }
 
-mostrarCarrito();
+mostrarNumerocarrito();
 
 fetch("/datos/productos.json")
   .then((respuesta) => respuesta.json())
@@ -87,8 +66,8 @@ fetch("/datos/productos.json")
       boton.addEventListener("click", () => {
         console.log("diste click");
         carrito.push(producto);
-        mostrarCarrito();
         mostrarToastify(`Qué crack! Agregaste ${producto.nombre}`);
+        mostrarNumerocarrito();
       });
     });
   });
