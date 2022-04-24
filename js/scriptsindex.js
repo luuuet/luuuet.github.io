@@ -68,6 +68,7 @@ fetch("/datos/productos.json")
         carrito.push(producto);
         mostrarToastify(`Qué crack! Agregaste ${producto.nombre}`);
         mostrarNumerocarrito();
+        localStorage.setItem("carrito", JSON.stringify(carrito));
       });
     });
   });

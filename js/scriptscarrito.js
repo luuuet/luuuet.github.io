@@ -27,8 +27,6 @@ function mostrarCarrito() {
   console.log(`El total es $${total}`);
   const totalhtml = document.getElementById("totalCarrito");
   totalhtml.innerHTML = `El total es $${total}`;
-
-  localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
 function mostrarToastify(mensajeToastify) {
